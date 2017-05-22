@@ -1,0 +1,93 @@
+{% extends "admin/base_admin.html" %}
+{% block title %}posts{% endblock %}
+{% block content %}
+    <!-- <div class="posts-row">
+        <ul id="post">
+        {% for post in posts %}
+                <li class="posts-title col-md-12"><a href={{ '/admin/edit/' + post.id|string}}>{{ post.title }}</a></li>
+                <li class="posts-date">date: {{ post.published_date }}</li>
+                <li class="posts-tags">tags: </li>
+                {% for tag in post.tags %}
+                    <li class="posts-category">{{ tag.tag_name }}</li>
+                {% endfor %}
+                <li><br></li>
+                <li id="{{ post.id }}" class="posts-publciate glyphicon glyphicon-ok-circle" value={% if post.published == 1 %}"1"{% else %}"0"{% endif %}  {% if post.published == 1 %}style="color: green;"{% endif %}></li>
+                <li id="{{ post.id }}" class="posts-remove glyphicon glyphicon-remove"></li>
+                <li id="{{ post.id }}" class="posts-edit glyphicon glyphicon-edit"></li>
+                <li><hr class="post-list__divider"></li>
+        {% endfor %}
+        </ul>
+    </div> -->
+    <div class="message">
+        {% if delete_message %}
+        <div class="alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          post <strong>"{{ delete_message }}"</strong> successfull deleted
+        </div>
+        {% elif publicate_message %}
+        <div class="alert alert-info alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          post <strong>"{{ publicate_message }}"</strong> successfull publicated
+        </div>
+        {% elif unpublicate_message %}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          post <strong>"{{ unpublicate_message }}"</strong> successfull unpublicated
+        </div>
+        {% endif %}
+    </div>
+    <div class="posts-table">
+    <div class="table-responsive">
+        <table class="table table-condensed table-hover table-striped table-bordered post-list">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th style="width: 150px;">tags</th>
+                    <th style="width: 150px;">last edit</th>
+                    <th style="width: 150px;">published date</th>
+                    <th style="width: 20px;">&nbsp;</th>
+                    <th style="width: 20px;">&nbsp;</th>
+                    <th style="width: 20px;">&nbsp;</th>
+                </tr> 
+            </thead>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>
+                {% for tag in post.tags %}
+                   <p>{{ tag.tag_name }}</p>
+                {% endfor %}
+                </td>
+                <td>{{ post.published_date }}</td>
+                <td>{{ post.published_date }}</td>
+                <td>
+                    <form class="icon" method="POST" action={{ url_for('delete_post') }}>
+                        <button class="post-list-buttons post-delete-button" name="postid" value="{{ post.id }}">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form class="icon" method="GET" action={{ '/admin/edit/' + post.id|string}}>
+                        <button class="post-list-buttons post-edit-button">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form class="icon" method="POST" action={{ url_for('publicate_post') }}>
+                        <button class="post-list-buttons post-publicate-button" name="arguments" value="{{ post.id|string + ',' + post.published|string }}">
+                            {% if post.published == 1 %}
+                            <i style="color: green;" class="fa fa-plus" aria-hidden="true"></i>
+                            {% else %}
+                            <i style="color: red;" class="fa fa-plus" aria-hidden="true"></i>
+                            {% endif %}
+                        </button>
+                    </form>
+                </td>
+            </tr> 
+            {% endfor %}
+        </table>
+        </div>
+    </div>
+{% endblock %}

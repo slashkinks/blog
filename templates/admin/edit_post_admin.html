@@ -1,0 +1,94 @@
+{% extends "admin/base_admin.html" %}
+{% block title %}edit{% endblock %}
+
+{% block content %}
+    <div class="edit-post remodal-bg">
+        <h3>edit</h3>
+        <input id="title" class="input-post-page title" placeholder="header" value="{{ post.title }}">
+        <br>
+        <select style="width:50% !important;" id="select-theme" class="select-post-theme js-example-tags form-control select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true">
+            {% for tag in post.tags %}
+                <option selected="selected">{{ tag.tag_name }}</option>
+            {% endfor %}
+            {% for tag in tags %}
+                 <option value={{ tag.tag_name }}>{{ tag.tag_name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <div class="remodal" data-remodal-id="modal">
+            <button  data-remodal-action="close" class="remodal-close"></button>
+            {% for file in files %}
+                    <div class="thumbnail col-md-4 col-sm-6 col-xs-12">
+                        <img src={{ '../../static/uploads/blog/' + file[0] }} >
+                        <div class="caption">
+                            <p>/static/uploads/blog/{{ file[0] }}</p>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+         <!-- <a href="#modal">choose image for new post</a> -->
+        <!-- {#     <a data-remodal-target="modal">Call the modal with data-remodal-id="modal"</a>#} -->
+        <button data-remodal-target="modal" class="my-admin-button">choose images for new post</button>
+        <br>
+        <br>
+        <div class="body_post">
+            <textarea title="Post_text" id="post_text">{{ post.body|safe }}</textarea>
+        </div>
+        <br>
+        <br>
+        <button id="save-changes-post" value="{{ post.id }}">save</button>
+        <br>
+        <br>
+    </div>
+{% endblock %}
+{% block js_library %}
+    {{ super() }}
+    <script src="../../static/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="../../static/js/edit_post_admin.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#post_text',
+            relative_urls: false,
+            plugins: ['image textcolor'],
+            /*plugins: [
+              'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+              'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime  nonbreaking',
+              'save contextmenu directionality template paste textcolor'
+            ],*/
+            toolbar: 'styleselect | alignleft aligncenter alignright alignjustify ' +
+            '| bullist numlist outdent indent | image | forecolor',
+            //link image | print preview fullpage | forecolor backcolor',
+            //image_advtab: true
+        });
+        /*tinymce.init({
+            selector: '#post_text',
+            relative_urls: false,
+            plugins: [
+              'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+              'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime  nonbreaking',
+              'save  contextmenu directionality  template paste textcolor'
+            ],
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify |' +
+            ' bullist numlist outdent indent | link image | print preview fullpage | forecolor backcolor ',
+            image_advtab: true
+        });*/
+    </script>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function(){
+                var safe_text = $('#post_text').text();
+                tinymce.get('post_text').setContent(safe_text);
+                //tinymce.get('post_text').getBody().innerHTML = '<p>This is my new content! 2</p>';
+                //$(tinymce.get('post_text').getBody()).html('<p>This is my new content! 3</p>');
+        },1000);
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+         $(".select-post-theme").select2({
+             tags:true
+         });
+        });
+    </script>
+{% endblock %}

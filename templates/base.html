@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>{% block title %}{% endblock %}</title>
+            <link rel="shortcut icon" href="/static/image/favicon.ico">
+            <link href="/static/css/main_page.css" type="text/css" rel="stylesheet">
+            <link href="/static/vendor/sweet_alert/sweetalert2.min.css" type="text/css" rel="stylesheet">
+            <link rel="stylesheet" href="/static/vendor/Remodal-1.1.1/dist/remodal.css">
+            <link rel="stylesheet" href="/static/vendor/Remodal-1.1.1/dist/remodal-default-theme.css">
+        {% endblock %}
+    </head>
+    <body>
+    <div class="row">
+        <div id="left-menu" class="visible-md visible-lg col-md-4  hidden-sm hidden-xs">
+            <div class="panel-main">
+                <div class="logo_info">
+                    <div class="logo">
+                        <img src="/static/image/firefox-logo.png" alt="">
+                    </div>
+                    <div class="site-title">
+                        <h1>Ivan Moiseev</h1>
+                    </div>
+                    <hr class="post-list__divider_menu ">
+                    <div class="site-description">
+                        <p>There will be our description</p>
+                    </div>
+                    <hr style="width: 50% !important;" class="post-list__divider_menu ">
+                    <div class="main_menu">
+                        <div class="links_on_socials">
+                            <ul class="links">
+                                <li><a href="/tags">tags</a></li>
+                                <li><span class="flaticon-vk" aria-hidden="true"></span></li>
+                                <li><span class="flaticon-github" aria-hidden="true"></span></li>
+                                <li><a href="/">blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sign-in" >
+                        {% if check == true %}
+                            <a id="log-out" href="/logout">log out</a>
+                        {% else %}
+                            <a id="sign" href="/login" >log in</a>
+                        {% endif %}
+                    </div>
+                    <div class="panel-cover--overlay"></div>
+                </div>
+            </div>
+        </div>
+        <div id="top-menu" class="visible-sm col-sm-12 hidden-lg visible-xs col-xs-12 hidden-md">
+            <div class="logo-info-top">
+                <div class="logo-top">
+                    <img src="/static/image/firefox-logo.png" alt="">
+                </div>
+                <div class="site-title">
+                    <h1>Ivan Moiseev</h1>
+                </div>
+               <hr class="post-list__divider_menu-top-one">
+                    <div class="site-description">
+                        <p>There will be our description</p>
+                    </div>
+                <hr class="post-list__divider_menu-top-second">
+                <div class="main-menu-top">
+                    <div class="links-on-socials-top">
+                        <ul class="link-top">
+                            <li><a href="/tags">tags</a></li>
+                            <li><span class="flaticon-vk" aria-hidden="true"></span></li>
+                            <li><span class="flaticon-github" aria-hidden="true"></span></li>
+                            <li><a href="/">blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sign-in-top" style="color: #444444 !important; ">
+                    {% if check == true %}
+                        <a id="log-out" href="/logout">log out</a>
+                    {% else %}
+                        <a id="sign" href="/login" >log in</a>
+                    {% endif %}
+                </div>
+
+                <div class="panel-cover--overlay"></div>
+
+            </div>
+        </div>
+        <div id="site-body" class="col-md-8 col-sm-12 col-xs-12">
+            {% block content %}{% endblock %}
+            <!-- <footer class="footer"><span class="footer__copyright">© 2017 Ivan Moiseev</span></footer> -->
+        </div>
+    </div>
+    </body>
+    {% block js_library %}
+        <script type="text/javascript" src="../static/vendor/jquery.js"></script>
+        <script type="text/javascript" src="../static/vendor/Remodal-1.1.1/dist/remodal.min.js"></script>
+    {% endblock %}
+</html>

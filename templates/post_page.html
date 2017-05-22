@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}post#{{ post.id }}{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="../static/vendor/highlite/styles/default.css">
+{% endblock %}
+{% block content %}
+    <div class="single-post">
+        <h1> {{ post.title }} </h1>
+        <div class="single-post-date" style="font-size: 12px; padding-bottom: 15px;">
+            <date>{{ post.published_date }}</date>
+        </div>
+        <div class="single-post-text">{{ post.body|safe }}</div>
+        <br>
+        <!-- <hr class="single-post-divider"> -->
+    </div>
+{% endblock %}
+{% block js_library %}
+    {{ super() }}
+    <script src="../static/vendor/highlite/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
+
+
+

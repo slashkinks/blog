@@ -1,0 +1,145 @@
+//@import '../vendor/bootstrap/bootstrap.less';
+// Core variables and mixins
+@import "../vendor/bootstrap/variables.less";
+@import "../vendor/bootstrap/mixins.less";
+//Reset and dependencies
+@import "../vendor/bootstrap/normalize.less";
+@import "../vendor/bootstrap/print.less";
+// Core CSS
+@import "../vendor/bootstrap/scaffolding.less";
+@import "../vendor/bootstrap/type.less";
+@import "../vendor/bootstrap/code.less";
+@import "../vendor/bootstrap/grid.less";
+@import "../vendor/bootstrap/tables.less";
+@import "../vendor/bootstrap/forms.less";
+@import "../vendor/bootstrap/buttons.less";
+// Utility classes
+@import "../vendor/bootstrap/utilities.less";
+@import "../vendor/bootstrap/responsive-utilities.less";
+@import '../fonts/socials_glyphicons/flaticon.css';
+@font-face{
+    font-family: CondBold; /* Гарнитура шрифта */
+    src: url(/static/fonts/SSS/OpenSans-CondBold.ttf); /* Путь к файлу со шрифтом */
+ }
+@font-face{
+    font-family: CondLight; /* Гарнитура шрифта */
+    src: url(/static/fonts/SSS/OpenSans-CondLight.ttf); /* Путь к файлу со шрифтом */
+ }
+@font-face{
+    font-family: CondLightItalic; /* Гарнитура шрифта */
+    src: url(/static/fonts/SSS/OpenSans-CondLightItalic.ttf); /* Путь к файлу со шрифтом */
+ }
+@font-face {
+font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-Regular.ttf");
+  src: local('☺'),
+  url("../fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@hover_link_color: rgba(220, 59, 55, 0.53);
+@main_font: Raleway;
+
+body{
+  background: url(/static/image/bgat.jpg) repeat;
+}
+.login_page_body{
+  letter-spacing: 1.5px;
+}
+.panel-cover--overlay {
+      display: block;
+      position: absolute;
+      z-index: -12;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(68, 68, 68, 0.2);
+      background-image: -webkit-linear-gradient(-410deg, rgba(68, 68, 68, 0.6) 40%, rgba(0, 0, 0, 0.9));
+  }
+//LOGIN PAGE
+body{
+  //font-family: CondLight;
+  font-family: @main_font, sans-serif;
+}
+.registration{
+    background-color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.3);
+    //border-bottom: 5px solid rgba(255, 219, 58, 0.3);
+    border-bottom: 5px solid @hover_link_color;
+}
+h1{
+    font-size: 2.5rem;
+    padding: 15px 20px;
+    //background-color: rgba(255, 219, 58, 0.3);
+    background-color: @hover_link_color;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.middle{
+  margin: 80px auto;
+}
+span{
+  display: block;
+  margin-bottom: 10px;
+}
+.input_auth{
+  display: block;
+  width: 400px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 8px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  text-align: center;
+  box-shadow: unset;
+}
+label {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0 20px;
+    font-weight: normal;
+}
+
+.input-requirements {
+    padding: 0;
+    font-size: 12px !important;
+    text-align: left;
+    list-style: disc;
+    list-style-position: inside;
+    max-width: 400px;
+    margin: 10px auto;
+    color: @hover_link_color;
+    transition: 0.7s;
+}  
+input[type="submit"]{
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  //background-color: rgba(255, 219, 58, 0.3);
+  background-color: @hover_link_color;
+  padding: 8px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: lightgray;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.2);
+}
+#ul_email{
+  display: none;
+}
+#ul_pass{
+  display: none;
+}
+//LOGIN PAGE
+

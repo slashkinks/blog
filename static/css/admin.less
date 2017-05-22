@@ -1,0 +1,265 @@
+@import '../vendor/bootstrap/bootstrap.less';
+@import "../vendor/bootstrap/variables.less";
+@import "../vendor/bootstrap/mixins.less";
+@import "../vendor/bootstrap/normalize.less";
+@import "../vendor/bootstrap/print.less";
+@import "../vendor/bootstrap/scaffolding.less";
+@import "../vendor/bootstrap/type.less";
+@import "../vendor/bootstrap/code.less";
+@import "../vendor/bootstrap/grid.less";
+@import "../vendor/bootstrap/tables.less";
+@import "../vendor/bootstrap/forms.less";
+@import "../vendor/bootstrap/buttons.less";
+@import "../vendor/bootstrap/glyphicons.less";
+// Utility classes
+@import "../vendor/bootstrap/utilities.less";
+@import "../vendor/bootstrap/responsive-utilities.less";
+@import '../fonts/socials_glyphicons/flaticon.css';
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-Regular.ttf");
+  src: local('☺'),
+  url("../fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@main_text_color: #666666;
+@main_font: Raleway;
+@hover_link_color: #d43f3a;
+::selection {background: #f8efc0;}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-family: @main_font, sans-serif;
+  margin:0;
+  padding:0;
+}
+.content{
+  padding: 20px 20px 20px 20px;
+}
+.page-content > .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2c3742;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: @hover_link_color;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+.menu-list-admin{
+  li{
+    a{
+      color: @main_text_color;
+      i{
+        font-size: 22px;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+
+
+/*NEW POST PAGE*/
+.remodal{
+  width: 70% !important;
+}
+.row-body{
+  padding: 20px 20px 20px 20px;
+}
+#post_text_ifr{
+  min-height: 250px !important;
+}
+#create_new_post_body{
+  background: url(/static/image/background.jpg) repeat;
+}
+.new_post{
+  text-align: center;
+}
+
+.body_post{
+  width: 100% !important;
+  display: inline-block;
+}
+
+.dropdown-menu a:hover{
+  color: @hover_link_color !important;
+  font-weight: bold;
+}
+.hidden{display:none;}
+.input-post-page{
+  display: block;
+  width: 50%;
+  height: 40px;
+  padding: 8px;
+  border-radius: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  box-shadow: unset;
+}
+.save-post-button{
+  background-color: white;
+  display: block;
+  height: 40px;
+  padding: 8px 20px 8px 20px;
+  border-radius: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  box-shadow: unset;
+  transition: 0.7s;
+}
+.save-post-button:hover {
+border-color: @hover_link_color;
+}
+#save-changes-post{
+  background-color: white;
+  display: block;
+  height: 40px;
+  padding: 8px 20px 8px 20px;
+  border-radius: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  box-shadow: unset;
+  transition: 0.7s;
+}
+#save-changes-post:hover {
+border-color: @hover_link_color;
+}
+.my-admin-button{
+  background-color: white;
+  display: block;
+  height: 40px;
+  padding: 8px 20px 8px 20px;
+  border-radius: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  box-shadow: unset;
+  transition: 0.7s;
+}
+.my-admin-button:hover {
+border-color: @hover_link_color;
+}
+#select-theme{
+  width:50% !important;
+  border-radius: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+}
+/*NEW POST PAGE*/
+
+
+
+
+
+
+/*FILE MANAGER*/
+.row-images {
+  padding-top: 20px;
+}
+.btn-tertiary {
+  background-color: white;
+  display: block;
+  height: 40px;
+
+  padding: 0;
+  line-height: 40px;
+  width: 500px;
+  text-align: left;
+  padding: 8px 20px 8px 20px;
+  border-radius: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  box-shadow: unset;
+  transition: 0.7s;
+  &:hover {
+    border-color: @hover_link_color;
+  }
+}
+.input-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  + .js-labelFile {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    //white-space: nowrap;
+    padding: 0px 10px;
+    padding-left: 20px !important;
+    cursor: pointer;
+    .icon:before {
+      content: "\f093";
+    }
+    &.has-file {
+      .icon:before {
+        content: "\f00c";
+        color: #5AAC7B;
+      }
+    }
+  }
+}
+.file-delete-button{
+  border: none;
+  font-size: 20px;
+  text-align: center;
+  background: transparent;
+  text-decoration: none;
+  padding: 0;
+  line-height: normal;
+}
+.file-container{
+  max-width: 200px; 
+  max-height: 80px; 
+  & img{
+    max-width: 200px;
+    max-height: 80px;
+  }
+}
+/*FILE MANAGER*/
+
+
+/*POSTS*/
+.post-list-buttons{
+  border: none;
+  font-size: 22px;
+  text-align: center;
+  background: transparent;
+  text-decoration: none;
+  padding: 0;
+  line-height: normal;
+}

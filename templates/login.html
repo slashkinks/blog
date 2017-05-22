@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> log_in </title>
+        <link rel="shortcut icon" href="/static/image/favicon.ico">
+        <link href="/static/css/auth.css" type="text/css" rel="stylesheet">
+        <link href="/static/vendor/sweet_alert/sweetalert2.min.css" type="text/css" rel="stylesheet">
+    </head>
+    <body  class="login_page_body">
+        <div class="middle container">
+            <div class="registration" id="registration">
+                <h1>log_in</h1>
+                <label for="e - mail">
+                    <span>e - mail</span>
+                    <input class="input_auth" type="email" id="login" name="login"  required>
+
+                    <ul id="ul_email" class="input-requirements" >
+                        <li class="l_len">длина мыла: 8 <= мыло < 50</li>
+                        <li class="l_dog">мыло должно содержать символ собаки @</li>
+                        <li class="l_rus">нельзя использовать рашн лэнгуич</li>
+                        <li class="l_spec">нельзя использовать специальные символы</li>
+                    </ul>
+                </label>
+
+                <label for="password">
+                    <span>password</span>
+                    <input class=" input_auth" type="password" id="password" name="password">
+
+                    <ul id="ul_pass" class="input-requirements">
+                        <li class="p_len">длина пароля: 5 <= пароль < 25</li>
+                        <li class="p_spec">пароль не должен содержать спец. символов</li>
+                        <li class="p_rus">нельзя использовать рашн лэнгуич</li>
+                    </ul>
+                </label>
+
+                <br>
+                <input id="submit_login" type="submit" value="   login   " style="letter-spacing: 2px;">
+                <a href="/main" style="float: right; text-decoration: none; color: #3A3A3A; margin-right: 8px; margin-bottom: 8px;">main</a>
+            </div>
+
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </body>
+    <script type="text/javascript" src="../static/vendor/jquery.js"></script>
+    <script type="text/javascript" src="../static/vendor/sweet_alert/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+    <script type="text/javascript" src="../static/js/login.js"></script>
+</html>

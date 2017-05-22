@@ -1,0 +1,64 @@
+{% extends "admin/base_admin.html" %}
+{% block title %}file manager{% endblock %}
+{% block content %}
+    <div class="message">
+        {% if file_name %}
+        <div class="alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          file <strong>"{{ file_name }}"</strong> was deleted
+        </div>
+        {% endif %}
+    </div>
+    <div class="download">
+        <h2>file manager</h2>
+        <div class="form-group">
+          <input type="file" name="file" id="_file" class="input-file">
+          <label for="_file" class="btn btn-tertiary js-labelFile">
+            <span class="js-fileName">choose a file</span>
+            <i style="padding: 5px;" class="icon fa fa-check"></i>
+          </label>
+        </div>
+        <input class="my-admin-button" type='button' id='_submit' value='upload'>
+    </div>
+    
+    <div class="row-images">
+        <table class="table table-striped table-bordered model-list">
+            <thead>
+                <tr>
+                    <th style="width: 20px;">&nbsp;</th>
+                    <th>name</th>
+                    <th style="width: 150px;">resolution</th>
+                    <th style="width: 80px;">size</th>
+                    <th style="width: 210px;">image</th>
+                </tr> 
+            </thead>
+            {% for file in files %}
+            <tr>
+                <td>
+                    <form style="border: none; background-color: none;" class="icon" method="POST" action={{ url_for('delete_file') }}>
+                        <button class="file-delete-button" name="file_name" value={{ file[0] }}>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </td>
+                <td>{{ file[0] }}</td>
+                <td>1024 x 2048 px</td>
+                <td>{{ file[1] }} Mb</td>
+                <td>
+                    <div class="file-container">
+                        <img src={{ '../../static/uploads/blog/' + file[0] }} />
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+{% block js_library %}
+    {{ super() }}
+    <script type="text/javascript" src="../../static/js/main.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+{% endblock %}
