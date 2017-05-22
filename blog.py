@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = {'gif', 'jpg', 'png', 'jpeg', 'bmp'}
 
 
-# ###################Мапперы-ADMIN######################
+# ###################URL-ADMIN######################
 @app.route('/admin/main')
 def admin_main():
     if 'username' not in session:
@@ -99,10 +99,10 @@ def edit_post(id):
                 size = round(size, 2)
                 files.append([filename, size])
         return render_template("admin/edit_post_admin.html", post=post, files=files, tags=tags)
-# ###################Мапперы-ADMIN######################
+# ###################URL-ADMIN######################
 
 
-# ###################Мапперы-MAIN#######################
+# ###################URL-MAIN#######################
 # Загрузка главной страницы блога
 @app.route('/')
 @app.route('/main')  # @app.route('/main/<int:page>', methods=['GET', 'POST'])
@@ -164,7 +164,7 @@ def post_page_load(id):
     post = Post.query.filter_by(id=id, published=True).first()
     check = check_login()
     return render_template('post_page.html', post=post, check=check)
-# ###################Мапперы-MAIN#######################
+# ###################URL-MAIN#######################
 
 
 # ###################Функционал-ADMIN###################
