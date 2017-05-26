@@ -1618,6 +1618,15 @@ body #left-menu .logo_info .links_on_socials ul li {
   transition: 0.7s;
 }
 body #left-menu .logo_info .links_on_socials ul li a {
+  transition: 0.7s;
+  text-decoration: none;
+  color: white;
+}
+body #left-menu .logo_info .links_on_socials ul li a:hover {
+  text-decoration: none;
+  color: #d43f3a;
+}
+body #left-menu .logo_info .links_on_socials ul li .menu-a {
   border: 2px solid white;
   border-radius: 15px;
   color: white;
@@ -1629,7 +1638,7 @@ body #left-menu .logo_info .links_on_socials ul li a {
   transition: 0.7s;
   text-decoration: none;
 }
-body #left-menu .logo_info .links_on_socials ul li a:hover {
+body #left-menu .logo_info .links_on_socials ul li .menu-a:hover {
   text-decoration: none;
   border: 2px solid #d43f3a;
   color: #d43f3a;
@@ -1667,6 +1676,15 @@ body #top-menu .logo-info-top .links-on-socials-top ul li {
   transition: 0.7s;
 }
 body #top-menu .logo-info-top .links-on-socials-top ul li a {
+  transition: 0.7s;
+  text-decoration: none;
+  color: #444444;
+}
+body #top-menu .logo-info-top .links-on-socials-top ul li a:hover {
+  text-decoration: none;
+  color: #d43f3a;
+}
+body #top-menu .logo-info-top .links-on-socials-top ul li .menu-a {
   border: 2px solid #444444;
   border-radius: 15px;
   color: #444444;
@@ -1678,7 +1696,7 @@ body #top-menu .logo-info-top .links-on-socials-top ul li a {
   transition: 0.7s;
   text-decoration: none;
 }
-body #top-menu .logo-info-top .links-on-socials-top ul li a:hover {
+body #top-menu .logo-info-top .links-on-socials-top ul li .menu-a:hover {
   text-decoration: none;
   border: 2px solid #d43f3a;
   color: #d43f3a;
