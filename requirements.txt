@@ -41,3 +41,4 @@ python-editor==1.0.3
 six==1.10.0
 sqlalchemy-migrate==0.10.0
 sqlparse==0.2.2
+flask-heroku==0.1.9
