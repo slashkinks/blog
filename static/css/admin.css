@@ -6732,9 +6732,6 @@ button.close {
   font-weight: normal;
   font-style: normal;
 }
-::selection {
-  background: #f8efc0;
-}
 body {
   font-family: 'Raleway', sans-serif;
   font-family: Raleway, sans-serif;
@@ -6744,78 +6741,42 @@ body {
 .content {
   padding: 20px 20px 20px 20px;
 }
-.page-content > .row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #2c3742;
-}
-ul.topnav li {
-  float: left;
-}
-ul.topnav li a {
-  display: block;
-  color: white;
+.header {
   text-align: center;
-  padding: 14px 16px;
+}
+.header .admin-menu ul {
+  padding: 0;
+  font-style: italic;
+}
+.header .admin-menu ul li {
   text-decoration: none;
+  display: inline;
 }
-ul.topnav li a:hover:not(.active) {
-  background-color: #111;
+.header .admin-menu ul a {
+  color: #444444;
 }
-ul.topnav li a.active {
-  background-color: #d43f3a;
+.header .admin-menu ul a:hover {
+  color: #e25440;
 }
-ul.topnav li.right {
-  float: right;
-}
-@media screen and (max-width: 600px) {
-  ul.topnav li.right,
-  ul.topnav li {
-    float: none;
-  }
-}
-.menu-list-admin li a {
-  color: #666666;
-}
-.menu-list-admin li a i {
-  font-size: 22px;
-  padding-right: 5px;
+.edit-post {
+  text-align: center;
 }
 /*NEW POST PAGE*/
-.remodal {
-  width: 70% !important;
-}
-.row-body {
-  padding: 20px 20px 20px 20px;
-}
 #post_text_ifr {
-  min-height: 250px !important;
+  min-height: 300px !important;
 }
-#create_new_post_body {
-  background: url(/static/image/background.jpg) repeat;
-}
-.new_post {
+.new-post {
   text-align: center;
 }
 .body_post {
-  width: 100% !important;
+  width: 80% !important;
   display: inline-block;
-}
-.dropdown-menu a:hover {
-  color: #d43f3a !important;
-  font-weight: bold;
+  margin: 0 auto;
 }
 .hidden {
   display: none;
 }
-.input-post-page {
-  display: block;
+.my-admin-input {
   width: 50%;
   height: 40px;
   padding: 8px;
@@ -6825,39 +6786,8 @@ ul.topnav li.right {
   border-color: #c8c8c8;
   box-shadow: unset;
 }
-.save-post-button {
-  background-color: white;
-  display: block;
-  height: 40px;
-  padding: 8px 20px 8px 20px;
-  border-radius: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #c8c8c8;
-  box-shadow: unset;
-  transition: 0.7s;
-}
-.save-post-button:hover {
-  border-color: #d43f3a;
-}
-#save-changes-post {
-  background-color: white;
-  display: block;
-  height: 40px;
-  padding: 8px 20px 8px 20px;
-  border-radius: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #c8c8c8;
-  box-shadow: unset;
-  transition: 0.7s;
-}
-#save-changes-post:hover {
-  border-color: #d43f3a;
-}
 .my-admin-button {
   background-color: white;
-  display: block;
   height: 40px;
   padding: 8px 20px 8px 20px;
   border-radius: 0;
@@ -6877,70 +6807,10 @@ ul.topnav li.right {
   border-style: solid;
   border-color: #c8c8c8;
 }
+.select2-selection__rendered {
+  float: left;
+}
 /*NEW POST PAGE*/
-/*FILE MANAGER*/
-.row-images {
-  padding-top: 20px;
-}
-.btn-tertiary {
-  background-color: white;
-  display: block;
-  height: 40px;
-  padding: 0;
-  line-height: 40px;
-  width: 500px;
-  text-align: left;
-  padding: 8px 20px 8px 20px;
-  border-radius: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #c8c8c8;
-  box-shadow: unset;
-  transition: 0.7s;
-}
-.btn-tertiary:hover {
-  border-color: #d43f3a;
-}
-.input-file {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-.input-file + .js-labelFile {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0px 10px;
-  padding-left: 20px !important;
-  cursor: pointer;
-}
-.input-file + .js-labelFile .icon:before {
-  content: "\f093";
-}
-.input-file + .js-labelFile.has-file .icon:before {
-  content: "\f00c";
-  color: #5AAC7B;
-}
-.file-delete-button {
-  border: none;
-  font-size: 20px;
-  text-align: center;
-  background: transparent;
-  text-decoration: none;
-  padding: 0;
-  line-height: normal;
-}
-.file-container {
-  max-width: 200px;
-  max-height: 80px;
-}
-.file-container img {
-  max-width: 200px;
-  max-height: 80px;
-}
-/*FILE MANAGER*/
 /*POSTS*/
 .post-list-buttons {
   border: none;

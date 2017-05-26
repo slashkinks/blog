@@ -29,20 +29,23 @@ document.getElementById('save-changes-post').addEventListener('click',function (
     selected_values = getSelectValues(select_element);
     selected_values = selected_values.toString();
 	console.log(selected_values);
-
-    $.post('/apply_changes', {
-        id: id,
-        title: title,
-        text: text,
-        tags: selected_values
-    }, function(data){
-        if(data === 1){
-            swal('saved');
-			//window.location.replace('/admin/posts');
-        }
-        else if(data === 2){
-            swal('wtf');
-        }
-    });
-     
+    if(title== "" || text== "" || selected_values == ""){
+        swal('заполните пустые поля');
+    }
+    else{
+        $.post('/apply_changes', {
+            id: id,
+            title: title,
+            text: text,
+            tags: selected_values
+        }, function(data){
+            if(data === 1){
+                swal('saved');
+                //window.location.replace('/admin/posts');
+            }
+            else if(data === 2){
+                swal('wtf');
+            }
+        });
+    }
 });

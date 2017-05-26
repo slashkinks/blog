@@ -21,16 +21,22 @@ $(function() {
 	  var select_element = document.getElementById("select-theme");
 	  selected_values = getSelectValues(select_element);
 	  selected_values = selected_values.toString();
-	  $.post('/add', {
-	  title: title,
-	  text: text,
-	  tags: selected_values
-	  }, function(data){
-		  if(data == true)
-			swal('post created');
-		  else
-			swal('Oops...');
-	  });
+		console.log(text,title,selected_values);
+		if(title== "" || text== "" || selected_values == ""){
+			swal('заполните пустые поля');
+		}
+		else{
+			$.post('/add', {
+			title: title,
+			text: text,
+			tags: selected_values
+			}, function(data){
+				if(data == true)
+				swal('post created');
+				else
+				swal('Oops...');
+			});
+		}
 	
   });
 });

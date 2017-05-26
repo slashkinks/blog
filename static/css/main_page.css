@@ -1587,28 +1587,6 @@ body #left-menu .logo_info {
   color: white;
   display: table-cell;
   vertical-align: middle;
-  /*.main_menu{
-        a{
-          color: white;
-          font-size: 15px;
-          text-decoration: none;
-        }
-        text-align: center;
-        ul.menu {
-          padding-bottom: 10px;
-          padding-left: 0;
-          margin: 0;
-          li {
-            display: inline;
-            padding-right: 10px;
-            transition: 0.8s;
-            :hover{
-              color: #d43f3a;
-              font-weight: bold;
-            }
-          }
-        }
-      }*/
 }
 body #left-menu .logo_info .logo img {
   width: 100px;
@@ -1659,28 +1637,6 @@ body #left-menu .logo_info .links_on_socials ul li a:hover {
 body #left-menu .logo_info .links_on_socials ul li:hover {
   color: #d43f3a;
 }
-body #left-menu .logo_info .sign-in {
-  text-align: center;
-  margin: 0 auto;
-}
-body #left-menu .logo_info .sign-in a {
-  font-size: 16px;
-  color: white;
-  text-decoration: none;
-}
-body #left-menu .logo_info .sign-in a:hover {
-  color: #d43f3a;
-  font-weight: bold;
-}
-body #left-menu .logo_info .sign-in p {
-  font-size: 16px;
-  color: white;
-  text-decoration: none;
-}
-body #left-menu .logo_info .sign-in p:hover {
-  color: #d43f3a;
-  font-weight: bold;
-}
 body #top-menu {
   margin: 0 auto;
   text-align: center;
@@ -1697,13 +1653,6 @@ body #top-menu .logo-info-top .logo-top img {
   display: block;
   margin: 0 auto;
 }
-body #top-menu .logo-info-top .info-top {
-  text-align: center;
-}
-body #top-menu .logo-info-top .info-top h1 {
-  text-decoration-color: #444444;
-  text-align: center;
-}
 body #top-menu .logo-info-top .links-on-socials-top {
   text-align: center;
 }
@@ -1717,54 +1666,25 @@ body #top-menu .logo-info-top .links-on-socials-top ul li {
   display: inline;
   transition: 0.7s;
 }
+body #top-menu .logo-info-top .links-on-socials-top ul li a {
+  border: 2px solid #444444;
+  border-radius: 15px;
+  color: #444444;
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 10px;
+  text-shadow: none;
+  white-space: nowrap;
+  transition: 0.7s;
+  text-decoration: none;
+}
+body #top-menu .logo-info-top .links-on-socials-top ul li a:hover {
+  text-decoration: none;
+  border: 2px solid #d43f3a;
+  color: #d43f3a;
+}
 body #top-menu .logo-info-top .links-on-socials-top ul li:hover {
   color: #d43f3a;
-}
-body #top-menu .logo-info-top .main-menu-top {
-  text-align: center;
-}
-body #top-menu .logo-info-top .main-menu-top a {
-  color: #444444;
-  font-size: 15px;
-  text-decoration: none;
-}
-body #top-menu .logo-info-top .main-menu-top ul.menu-top {
-  padding-bottom: 10px;
-  padding-left: 0;
-  margin: 0;
-}
-body #top-menu .logo-info-top .main-menu-top ul.menu-top li {
-  display: inline;
-  padding-right: 10px;
-  transition: 0.8s;
-}
-body #top-menu .logo-info-top .main-menu-top ul.menu-top li :hover {
-  color: #d43f3a;
-  font-weight: bold;
-}
-body #top-menu .logo-info-top .sign-in-top {
-  text-align: center;
-  margin: 0 auto;
-}
-body #top-menu .logo-info-top .sign-in-top a {
-  font-size: 16px;
-  color: #444444;
-  text-decoration: none;
-}
-body #top-menu .logo-info-top .sign-in-top a:hover {
-  color: #d43f3a;
-  font-weight: bold;
-}
-.footer {
-  padding-top: 20px;
-  padding-left: 20px;
-  border-top: 2px solid #dddddd;
-  font-size: 14px;
-  color: #666666;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 #site-body {
   background-color: #fcfcfd;
@@ -1799,6 +1719,12 @@ body #top-menu .logo-info-top .sign-in-top a:hover {
   color: #666666;
   font-size: 12px;
 }
+.post .post_text a {
+  color: #e25440;
+}
+.post .post_text a:hover {
+  text-decoration: underline;
+}
 .post .post_title {
   font-size: 16px;
 }
@@ -1818,6 +1744,9 @@ body #top-menu .logo-info-top .sign-in-top a:hover {
   padding: 5px 10px;
   text-shadow: none;
   white-space: nowrap;
+}
+.single-post a {
+  color: #e25440;
 }
 .panel-cover--overlay {
   display: block;

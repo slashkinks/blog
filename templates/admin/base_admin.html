@@ -17,28 +17,38 @@
     </head>
 
     <body>
-        <div class="wrapper">
-            <header class="header-admin">
-                <ul class="topnav menu-list-admin">
-                    {% block main_menu %}
-                    <li><a class="active" href="/"><i class="glyphicon glyphicon-home"></i> back to site</a></li>
-                    <li><a href="/admin/new_post"><i class="glyphicon glyphicon-pencil"></i> new post</a></li>
-                    <li><a href="/admin/file_manager"><i class="glyphicon glyphicon-file"></i> file manager</a></li>
-                    <li><a href="/admin/posts"><i class="glyphicon glyphicon-list-alt"></i> posts</a></li>
-                    <li><a href="/admin/tags"><i class="fa fa-tags"></i> tags</a></li>
-                    <li class="right"><a class="active" href="/admin/logout"><i class="glyphicon glyphicon-off"></i> logout</a></li>
-                    {% endblock %}
-                </ul>
-            </header>
-            <div class="content">
-                {% block content %}{% endblock %}
+        <div class="header">
+            <div class="logo-info">
+                <h1>Admin panel of our blog</h1>
             </div>
-            <!-- <footer class="admin-footer">
-                <div class="copy text-center">
-                    © 2017 Ivan Moiseev. <a href='/main'>main</a>
-                </div>
-            </footer> -->
-        </div>   
+            <div class="admin-menu">
+                <ul>
+                    <li><a href="/"></i>site</a></li>
+                    <li> / </li>
+                    <li><a href="/admin/new_post">new</a></li>
+                    <li> / </li>
+                    <li><a href="/admin/posts">posts</a></li>
+                    <li> / </li>
+                    <li><a href="/admin/tags">tags</a></li>
+                    <li> / </li>
+                    <li><a href="/admin/logout"> logout</a></li>
+                </ul>
+            </div>
+            <div class="action">
+                <h3>    
+                {% block action %}{% endblock %}
+                </h3>
+            </div>
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!-- <footer class="admin-footer">
+            <div class="copy text-center">
+                © 2017 Ivan Moiseev. <a href='/main'>main</a>
+            </div>
+        </footer> --> 
     </body>
 
     {% block js_library %}
